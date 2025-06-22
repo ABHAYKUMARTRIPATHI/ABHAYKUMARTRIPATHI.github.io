@@ -1,9 +1,13 @@
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
   margin: 0;
-  background: #0d1117;
+  padding: 0;
+  background-color: #0d1117;
   color: #c9d1d9;
+}
+body.light {
+  background-color: #f4f4f4;
+  color: #0d1117;
 }
 header {
   background: #161b22;
@@ -12,31 +16,50 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-nav a {
-  margin: 0 10px;
+header nav a {
   color: #58a6ff;
+  margin-right: 15px;
   text-decoration: none;
+}
+button#theme-toggle {
+  background: none;
+  color: inherit;
+  border: 1px solid currentColor;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 section {
   padding: 2rem;
 }
-#repo-list {
-  display: grid;
-  gap: 1rem;
-}
 .repo-card {
+  background: #161b22;
   border: 1px solid #30363d;
   padding: 1rem;
-  background: #161b22;
+  margin: 1rem 0;
   border-radius: 8px;
-  transition: transform 0.3s ease;
 }
-.repo-card:hover {
-  transform: translateY(-5px);
-  border-color: #58a6ff;
+body.light .repo-card {
+  background: #fff;
+  border: 1px solid #ddd;
 }
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #161b22;
+.repo-card h3 {
+  margin-top: 0;
+}
+.repo-card a {
+  color: #58a6ff;
+}
+button.filter-btn {
+  margin: 10px 10px 10px 0;
+  background: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+body.light button.filter-btn {
+  background: #eaeaea;
+  color: #111;
+  border: 1px solid #bbb;
 }
