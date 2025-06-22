@@ -63,3 +63,22 @@ body.light button.filter-btn {
   color: #111;
   border: 1px solid #bbb;
 }
+
+#education {
+  padding: 2rem;
+}
+
+.edu-entry {
+  margin-bottom: 1.5rem;
+}
+
+.edu-entry h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.edu-entry p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
