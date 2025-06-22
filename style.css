@@ -1,0 +1,42 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #0d1117;
+  color: #c9d1d9;
+}
+header {
+  background: #161b22;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  margin: 0 10px;
+  color: #58a6ff;
+  text-decoration: none;
+}
+section {
+  padding: 2rem;
+}
+#repo-list {
+  display: grid;
+  gap: 1rem;
+}
+.repo-card {
+  border: 1px solid #30363d;
+  padding: 1rem;
+  background: #161b22;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.repo-card:hover {
+  transform: translateY(-5px);
+  border-color: #58a6ff;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #161b22;
+}
