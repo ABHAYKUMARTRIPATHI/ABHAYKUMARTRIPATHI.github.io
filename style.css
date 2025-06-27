@@ -3,10 +3,11 @@ body {
   font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0c0f15;
+  background-color: #0b0f0c;
   color: #e0e0e0;
   transition: background-color 0.3s, color 0.3s;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 body.light {
@@ -14,9 +15,29 @@ body.light {
   color: #0d1117;
 }
 
+/* Hacker-style Background Grid Animation */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(0, 255, 100, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+  animation: gridScroll 60s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes gridScroll {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
 /* Header */
 header {
-  background: #0c0f15;
+  background: #0b0f0c;
   padding: 1.5rem 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -28,15 +49,9 @@ header {
 
 header h1 {
   font-size: 2rem;
-  color: #00ffc6;
+  color: #00ff66;
   margin: 0;
-}
-
-#typed {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: #79c0ff;
-  font-weight: 600;
+  text-shadow: 0 0 10px #00ff66;
 }
 
 header nav {
@@ -49,21 +64,21 @@ header nav {
 }
 
 header nav a {
-  color: #00ffc6;
+  color: #00ff66;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 header nav a:hover {
-  text-decoration: underline;
-  color: #ff3c78;
+  color: #ff0040;
+  text-shadow: 0 0 10px #ff0040;
 }
 
 button#theme-toggle {
   background: none;
-  color: #00ffc6;
-  border: 1px solid #00ffc6;
+  color: #00ff66;
+  border: 1px solid #00ff66;
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
@@ -72,61 +87,69 @@ button#theme-toggle {
 }
 
 button#theme-toggle:hover {
-  background-color: rgba(0, 255, 198, 0.1);
-  box-shadow: 0 0 8px #00ffc6, 0 0 12px #00ffc6;
+  background-color: rgba(0, 255, 100, 0.1);
+  box-shadow: 0 0 8px #00ff66, 0 0 12px #00ff66;
 }
 
+/* Sections */
 section {
   padding: 2rem;
   max-width: 900px;
   margin: auto;
 }
 
+/* Terminal Typing Animation Cursor */
+#typed-roles::after {
+  content: "_";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* Repo Cards */
 .repo-card {
-  background: #0c0f15;
-  border: 1px solid #30363d;
+  background: #0d0f10;
+  border: 1px solid #00ff66;
   padding: 1.2rem;
   margin: 1.5rem 0;
   border-radius: 10px;
   color: #e0e0e0;
-  box-shadow: 0 0 10px rgba(0, 255, 198, 0.05);
+  box-shadow: 0 0 10px rgba(0, 255, 100, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .repo-card:hover {
   transform: scale(1.02);
-  border: 1px solid #00ffc6;
-  box-shadow: 0 0 10px #00ffc6, 0 0 20px #00ffc6;
-}
-
-body.light .repo-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  color: #0d1117;
+  border-color: #ff0040;
+  box-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040;
 }
 
 .repo-card h3 {
   margin-top: 0;
+  color: #00ff66;
 }
 
 .repo-card a {
-  color: #00ffc6;
+  color: #00ff66;
   font-weight: bold;
   text-decoration: none;
 }
 
 .repo-card a:hover {
-  color: #ff3c78;
-  text-decoration: underline;
+  color: #ff0040;
+  text-shadow: 0 0 10px #ff0040;
 }
 
 /* Filter Buttons */
 button.filter-btn {
   margin: 10px 10px 10px 0;
   background: transparent;
-  color: #00ffc6;
-  border: 1px solid #00ffc6;
+  color: #00ff66;
+  border: 1px solid #00ff66;
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -134,8 +157,8 @@ button.filter-btn {
 }
 
 button.filter-btn:hover {
-  background: rgba(0, 255, 198, 0.1);
-  box-shadow: 0 0 8px #00ffc6, 0 0 12px #00ffc6;
+  background: rgba(0, 255, 100, 0.1);
+  box-shadow: 0 0 8px #00ff66, 0 0 12px #00ff66;
 }
 
 body.light button.filter-btn {
@@ -149,18 +172,10 @@ body.light button.filter-btn:hover {
 }
 
 /* Education Section */
-#education {
-  padding: 2rem;
-}
-
-.edu-entry {
-  margin-bottom: 1.5rem;
-}
-
 .edu-entry h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #00ffc6;
+  color: #00ff66;
 }
 
 .edu-entry p {
@@ -173,14 +188,9 @@ body.light button.filter-btn:hover {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #0c0f15;
+  background: #0b0f0c;
   font-size: 0.9rem;
-  color: #a0a0a0;
-}
-
-body.light footer {
-  background: #f4f4f4;
-  color: #444;
+  color: #888;
 }
 
 /* More Projects Note */
@@ -192,14 +202,14 @@ body.light footer {
 }
 
 .more-projects-note a {
-  color: #00ffc6;
+  color: #00ff66;
   text-decoration: none;
   font-weight: bold;
 }
 
 .more-projects-note a:hover {
-  color: #ff3c78;
-  text-decoration: underline;
+  color: #ff0040;
+  text-shadow: 0 0 8px #ff0040;
 }
 
 /* AOS Animations */
@@ -214,7 +224,7 @@ body.light footer {
   opacity: 1;
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media screen and (max-width: 600px) {
   header {
     padding: 1rem;
@@ -224,7 +234,7 @@ body.light footer {
     font-size: 1.5rem;
   }
 
-  #typed {
+  #typed-roles {
     font-size: 1rem;
   }
 
@@ -233,7 +243,7 @@ body.light footer {
   }
 }
 
-/* Name + Role Typing */
+/* Typing Role Text */
 .name-and-title {
   text-align: center;
   margin-top: 2rem;
@@ -241,8 +251,9 @@ body.light footer {
 
 .static-name {
   font-size: 2rem;
-  color: #00ffc6;
+  color: #00ff66;
   margin-bottom: 0.2rem;
+  text-shadow: 0 0 8px #00ff66;
 }
 
 #typed-roles {
@@ -251,21 +262,7 @@ body.light footer {
   color: #e0e0e0;
 }
 
-/* Terminal-style heading glow */
+/* Glowing Headers */
 h1, h2, h3 {
-  text-shadow: 0 0 5px #00ffc6, 0 0 10px #00ffc6;
-}
-
-/* Hacker-style Background Grid */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgba(0, 255, 198, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  z-index: -1;
-  opacity: 0.3;
+  text-shadow: 0 0 6px #00ff66, 0 0 12px #00ff66;
 }
