@@ -224,3 +224,20 @@ body.light footer {
     gap: 0.5rem;
   }
 }
+
+.name-and-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.static-name {
+  font-size: 2rem;
+  color: #58a6ff;
+  margin-bottom: 0.2rem;
+}
+
+#typed-roles {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c9d1d9;
+}
