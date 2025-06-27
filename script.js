@@ -18,28 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let allRepos = [];
 
-  fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
-    .then(res => res.json())
-    .then(repos => {
-      allRepos = repos.filter(repo =>
-        !repo.fork &&
-        repo.name !== `${username}.github.io` &&
-        customCategories[repo.name]
-      );
-      renderRepos("all");
-    })
-    .catch(err => {
-      repoList.innerHTML = "<p>⚠️ Failed to load repositories. Try again later.</p>";
-      console.error("GitHub fetch failed:", err);
-    });
-
   function renderRepos(category) {
     repoList.innerHTML = "";
-
-    let filtered = allRepos;
-    if (category !== "all") {
-      filtered = allRepos.filter(r => customCategories[r.name] === category);
-    }
+    let filtered = category === "all"
+      ? allRepos
+      : allRepos.filter(r => customCategories[r.name] === category);
 
     if (filtered.length === 0) {
       repoList.innerHTML = "<p>No projects found in this category.</p>";
@@ -51,14 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
       card.className = "repo-card";
       card.setAttribute("data-aos", "fade-up");
 
-      const repoName = repo.name || "Untitled";
-      const desc = repo.description ? repo.description.slice(0, 200) : "No description provided.";
-      const repoUrl = repo.html_url || "#";
-
       card.innerHTML = `
-        <h3>${repoName}</h3>
-        <p>${desc}${repo.description && repo.description.length > 200 ? "..." : ""}</p>
-        <a href="${repoUrl}" target="_blank">🔗 View on GitHub</a>
+        <h3>${repo.name}</h3>
+        <p>${repo.description ? repo.description.slice(0, 200) : "No description provided."}</p>
+        <a href="${repo.html_url}" target="_blank">🔗 View on GitHub</a>
       `;
       repoList.appendChild(card);
     });
@@ -71,7 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.refresh();
   }
 
-  // Category filtering
+  fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+    .then(res => res.json())
+    .then(repos => {
+      allRepos = repos.filter(repo =>
+        !repo.fork && repo.name !== `${username}.github.io` && customCategories[repo.name]
+      );
+      renderRepos("all");
+    });
+
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const category = btn.getAttribute("data-category");
@@ -79,12 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Theme toggle
   document.getElementById("theme-toggle").addEventListener("click", () => {
     document.body.classList.toggle("light");
   });
 
-  // Typed animation for roles
+  // Typed.js animation under static name
   new Typed("#typed-roles", {
     strings: [
       "Cybersecurity Developer",
@@ -95,9 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     typeSpeed: 60,
     backSpeed: 30,
     loop: true,
-    showCursor: true,
   });
 
-  // AOS Animation
+  // Init AOS after everything is ready
   AOS.init({ duration: 1000 });
 });
