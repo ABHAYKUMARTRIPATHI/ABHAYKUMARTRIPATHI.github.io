@@ -1,69 +1,145 @@
+/* Base Styles */
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #0d1117;
   color: #c9d1d9;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 body.light {
   background-color: #f4f4f4;
   color: #0d1117;
 }
+
+/* Header */
 header {
   background: #161b22;
-  padding: 1rem;
+  padding: 1.5rem 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
+
+header h1 {
+  font-size: 1.8rem;
+  color: #58a6ff;
+  margin: 0;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
 header nav a {
   color: #58a6ff;
-  margin-right: 15px;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
+
+header nav a:hover {
+  text-decoration: underline;
+  color: #79c0ff;
+}
+
 button#theme-toggle {
   background: none;
   color: inherit;
   border: 1px solid currentColor;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
 }
+
+button#theme-toggle:hover {
+  background-color: #30363d;
+}
+
 section {
   padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
+
+/* Typing effect style */
+#typed {
+  color: #58a6ff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: center;
+  display: block;
+  margin: 1rem auto 0;
+}
+
+/* Repo Cards */
 .repo-card {
   background: #161b22;
   border: 1px solid #30363d;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.repo-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.15);
+}
+
 body.light .repo-card {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #ddd;
 }
+
 .repo-card h3 {
   margin-top: 0;
 }
+
 .repo-card a {
   color: #58a6ff;
+  font-weight: bold;
 }
+
+.repo-card a:hover {
+  text-decoration: underline;
+}
+
+/* Filter Buttons */
 button.filter-btn {
   margin: 10px 10px 10px 0;
   background: #21262d;
   color: #c9d1d9;
   border: 1px solid #30363d;
-  padding: 6px 12px;
-  border-radius: 4px;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s;
 }
+
+button.filter-btn:hover {
+  background: #30363d;
+}
+
 body.light button.filter-btn {
   background: #eaeaea;
   color: #111;
   border: 1px solid #bbb;
 }
 
+body.light button.filter-btn:hover {
+  background: #d0d0d0;
+}
+
+/* Education */
 #education {
   padding: 2rem;
 }
@@ -74,7 +150,8 @@ body.light button.filter-btn {
 
 .edu-entry h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: #58a6ff;
 }
 
 .edu-entry p {
@@ -83,17 +160,44 @@ body.light button.filter-btn {
   line-height: 1.4;
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0d1117;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+body.light footer {
+  background: #f4f4f4;
+  color: #444;
+}
+
+/* More Projects */
 .more-projects-note {
   margin-top: 2rem;
   font-size: 1rem;
   font-style: italic;
   text-align: center;
 }
+
 .more-projects-note a {
   color: #58a6ff;
   text-decoration: none;
   font-weight: bold;
 }
+
 .more-projects-note a:hover {
   text-decoration: underline;
+}
+
+/* AOS Animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
 }
