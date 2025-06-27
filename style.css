@@ -88,6 +88,7 @@ section {
   padding: 1.2rem;
   margin: 1.5rem 0;
   border-radius: 10px;
+  color: #c9d1d9;
   box-shadow: 0 0 10px rgba(88, 166, 255, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -100,6 +101,7 @@ section {
 body.light .repo-card {
   background: #ffffff;
   border: 1px solid #ddd;
+  color: #0d1117;
 }
 
 .repo-card h3 {
