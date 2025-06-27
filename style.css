@@ -243,3 +243,50 @@ body.light footer {
   font-weight: bold;
   color: #c9d1d9;
 }
+
+/* Cyberpunk Font */
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Terminal-style heading */
+h1, h2, h3 {
+  text-shadow: 0 0 5px #58a6ff, 0 0 10px #58a6ff;
+}
+
+/* Glowing Repo Card Hover */
+.repo-card:hover {
+  border: 1px solid #00ffae;
+  box-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
+}
+
+/* Glowing Buttons */
+button,
+button.filter-btn,
+#theme-toggle {
+  background: transparent;
+  color: #00ffae;
+  border: 1px solid #00ffae;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover,
+button.filter-btn:hover,
+#theme-toggle:hover {
+  box-shadow: 0 0 8px #00ffae, 0 0 12px #00ffae;
+  background: rgba(0, 255, 174, 0.1);
+}
+
+/* Hacker-style Background Grid */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(88,166,255,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+  opacity: 0.3;
+}
