@@ -52,9 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     moreNote.innerHTML = `🚀 And many more on <a href="https://github.com/${username}" target="_blank">GitHub</a>...`;
     repoList.appendChild(moreNote);
 
-    AOS.refresh(); // Re-initialize animations after dynamic content
+    AOS.refresh();
   }
 
+  // Filter Button Handler
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const category = btn.getAttribute("data-category");
@@ -67,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("light");
   });
 
-  // Typed.js animation for name/title
-  new Typed("#typed", {
+  // 🔥 Typed animation (roles only)
+  new Typed("#typed-roles", {
     strings: [
-      "Abhay Kumar Tripathi",
       "Cybersecurity Developer",
       "AI/ML Enthusiast",
-      "Open Source Contributor"
+      "Open Source Contributor",
+      "Linux Tweaker"
     ],
     typeSpeed: 60,
     backSpeed: 30,
