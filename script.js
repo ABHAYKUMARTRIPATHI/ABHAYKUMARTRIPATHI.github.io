@@ -69,17 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🔥 Typed animation (roles only)
-  new Typed("#typed-roles", {
-    strings: [
-      "Cybersecurity Developer",
-      "AI/ML Enthusiast",
-      "Open Source Contributor",
-      "Linux Tweaker"
-    ],
-    typeSpeed: 60,
-    backSpeed: 30,
-    loop: true
-  });
+new Typed("#typed-roles", {
+  strings: [
+    "Cybersecurity Developer",
+    "AI/ML Enthusiast",
+    "Open Source Contributor",
+    "Linux Tweaker"
+  ],
+  typeSpeed: 60,
+  backSpeed: 30,
+  loop: true,
+  showCursor: true,
+});
 
   // Init AOS
   AOS.init({ duration: 1000 });
