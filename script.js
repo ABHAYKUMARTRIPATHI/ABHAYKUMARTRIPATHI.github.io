@@ -3,6 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const repoList = document.getElementById("repo-list");
   const filterButtons = document.querySelectorAll(".filter-btn");
 
+  // ✅ Terminal-style button click sound
+  const clickSound = new Audio("https://www.myinstants.com/media/sounds/button-click.mp3");
+
+  // ✅ Sound on all button clicks
+  document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    });
+  });
+
+  // ✅ Custom category mappings for GitHub repos
   const customCategories = {
     "CloudBucketScanner": "Tools",
     "virustotal_scanner": "AI/ML",
@@ -18,9 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let allRepos = [];
 
+  // ✅ Render filtered GitHub repositories
   function renderRepos(category) {
     repoList.innerHTML = "";
-    let filtered = category === "all"
+    const filtered = category === "all"
       ? allRepos
       : allRepos.filter(r => customCategories[r.name] === category);
 
@@ -50,15 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.refresh();
   }
 
+  // ✅ Fetch and filter GitHub repos
   fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
     .then(res => res.json())
     .then(repos => {
       allRepos = repos.filter(repo =>
-        !repo.fork && repo.name !== `${username}.github.io` && customCategories[repo.name]
+        !repo.fork &&
+        repo.name !== `${username}.github.io` &&
+        customCategories[repo.name]
       );
       renderRepos("all");
     });
 
+  // ✅ Filter button click
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const category = btn.getAttribute("data-category");
@@ -66,11 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ✅ Theme toggle
   document.getElementById("theme-toggle").addEventListener("click", () => {
     document.body.classList.toggle("light");
   });
 
-  // Typed.js animation under static name
+  // ✅ Typed.js text animation with blinking cursor effect
   new Typed("#typed-roles", {
     strings: [
       "Cybersecurity Developer",
@@ -81,12 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
     typeSpeed: 60,
     backSpeed: 30,
     loop: true,
+    showCursor: false // we'll use custom animated cursor
   });
 
-  // Init AOS after everything is ready
+  // ✅ AOS animation init
   AOS.init({
-  duration: 1000,
-  offset: 100,
-  easing: 'ease-in-out',
-  once: true
+    duration: 1000,
+    offset: 100,
+    easing: 'ease-in-out',
+    once: true
+  });
 });
