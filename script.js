@@ -84,5 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Init AOS after everything is ready
-  AOS.init({ duration: 1000 });
+  AOS.init({
+  duration: 1000,
+  offset: 100,
+  easing: 'ease-in-out',
+  once: true
 });
