@@ -5,11 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abhay Kumar Tripathi – GitHub Portfolio</title>
 
-  <!-- CSS -->
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Cybersecurity Portfolio of Abhay Kumar Tripathi">
+  <meta property="og:title" content="Abhay Kumar Tripathi – GitHub Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.png" />
+  <meta property="og:url" content="https://abhaykumartripathi.github.io" />
+
+  <!-- CSS Files -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- AOS CSS -->
+  <!-- AOS Animation Library -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
   <header>
@@ -29,8 +40,12 @@
     <section id="about">
       <h2>About Me</h2>
       <p>
-        Cybersecurity researcher and developer currently pursuing an M.Sc in Cyber Forensics and Information Security, with a solid foundation from a B.Sc background...
+        Cybersecurity researcher and developer currently pursuing an M.Sc in Cyber Forensics and Information Security, with a solid foundation from a B.Sc background. Proficient in digital investigations, network analysis, and ethical hacking, leveraging tools like Wireshark, Python, and Linux. Passionate about open-source, automation, and AI, and driven by a mission to strengthen online safety and contribute to national cyber defense. A strong communicator with sharp problem-solving skills, committed to continuous learning and innovation.
       </p>
+      <div class="github-stats">
+        <img src="https://github-readme-stats.vercel.app/api?username=ABHAYKUMARTRIPATHI&show_icons=true&theme=github_dark" alt="GitHub Stats" />
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ABHAYKUMARTRIPATHI&layout=compact&theme=github_dark" alt="Top Languages" />
+      </div>
     </section>
 
     <section id="education">
@@ -63,6 +78,12 @@
 
     <section id="contact">
       <h2>Contact</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
       <p><strong>GitHub:</strong> <a href="https://github.com/ABHAYKUMARTRIPATHI">@ABHAYKUMARTRIPATHI</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abhay-kumar-tripathi">linkedin.com/in/abhay-kumar-tripathi</a></p>
       <p><strong>Email:</strong> <a href="mailto:abhaytripathi1109@gmail.com">abhaytripathi1109@gmail.com</a></p>
@@ -73,9 +94,12 @@
     <p>© 2025 Abhay Kumar Tripathi</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.body.classList.add('light');
+    }
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
