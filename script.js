@@ -27,34 +27,46 @@ document.addEventListener("DOMContentLoaded", () => {
       renderRepos("all");
     });
 
-  function renderRepos(category) {
-    repoList.innerHTML = "";
-    let filtered = allRepos;
-    if (category !== "all") {
-      filtered = allRepos.filter(r => customCategories[r.name] === category);
-    }
+ function renderRepos(category) {
+  console.log("Rendering category:", category);
+  repoList.innerHTML = "";
 
-    filtered.slice(0, 12).forEach(repo => {
-      const desc = repo.description ? repo.description.slice(0, 200) : "No description provided.";
-      const card = document.createElement("div");
-      card.className = "repo-card";
-      card.setAttribute("data-aos", "fade-up");
-      card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${desc}${repo.description && repo.description.length > 200 ? "..." : ""}</p>
-        <a href="${repo.html_url}" target="_blank">🔗 View on GitHub</a>
-      `;
-      repoList.appendChild(card);
-    });
-
-    const moreNote = document.createElement("p");
-    moreNote.className = "more-projects-note";
-    moreNote.innerHTML = `🚀 And many more on <a href="https://github.com/${username}" target="_blank">GitHub</a>...`;
-    repoList.appendChild(moreNote);
-
-    AOS.refresh();
+  let filtered = allRepos;
+  if (category !== "all") {
+    filtered = allRepos.filter(r => customCategories[r.name] === category);
   }
 
+  if (filtered.length === 0) {
+    repoList.innerHTML = "<p>No projects found in this category.</p>";
+    return;
+  }
+
+  filtered.slice(0, 12).forEach(repo => {
+    console.log("Loading repo:", repo.name); // Debugging
+
+    const repoName = repo.name || "Untitled";
+    const desc = repo.description ? repo.description.slice(0, 200) : "No description provided.";
+    const repoUrl = repo.html_url || "#";
+
+    const card = document.createElement("div");
+    card.className = "repo-card";
+    card.setAttribute("data-aos", "fade-up");
+
+    card.innerHTML = `
+      <h3 style="color:#c9d1d9;">${repoName}</h3>
+      <p style="color:#c9d1d9;">${desc}${repo.description && repo.description.length > 200 ? "..." : ""}</p>
+      <a href="${repoUrl}" target="_blank" style="color:#58a6ff;">🔗 View on GitHub</a>
+    `;
+    repoList.appendChild(card);
+  });
+
+  const moreNote = document.createElement("p");
+  moreNote.className = "more-projects-note";
+  moreNote.innerHTML = `🚀 And many more on <a href="https://github.com/${username}" target="_blank">GitHub</a>...`;
+  repoList.appendChild(moreNote);
+
+  AOS.refresh();
+}
   // Filter Button Handler
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
