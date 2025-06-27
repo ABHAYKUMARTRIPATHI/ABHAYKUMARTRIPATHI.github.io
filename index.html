@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abhay Kumar Tripathi – GitHub Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1><span id="typed"></span></h1>
+  <header>
+    <h1 id="name">Abhay Kumar Tripathi</h1>
+    <div id="typed-container">
+      <span id="typed"></span>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -19,12 +22,14 @@
   </header>
 
   <main>
-    <section id="about" data-aos="fade-up">
+    <section id="about">
       <h2>About Me</h2>
-      <p>Cybersecurity researcher & developer pursuing an M.Sc in Cyber Forensics and Information Security. Passionate about open-source, automation, AI & national cyber defense.</p>
+      <p>
+        Cybersecurity researcher and developer currently pursuing an M.Sc in Cyber Forensics and Information Security, with a solid foundation from a B.Sc background. Proficient in digital investigations, network analysis, and ethical hacking, leveraging tools like Wireshark, Python, and Linux. Passionate about open-source, automation, and AI, and driven by a mission to strengthen online safety and contribute to national cyber defense. A strong communicator with sharp problem-solving skills, committed to continuous learning and innovation.
+      </p>
     </section>
-    
-    <section id="education" data-aos="fade-up">
+
+    <section id="education">
       <h2>Education</h2>
       <div class="edu-entry">
         <h3>M.Sc. Cyber Forensic and Information Security</h3>
@@ -33,12 +38,12 @@
       </div>
       <div class="edu-entry">
         <h3>B.Sc. Cyber Security and Information Security</h3>
-        <p><strong>VELS Institute</strong>, Chennai<br />
+        <p><strong>VELS Institute of Science, Technology and Advanced Studies</strong>, Chennai<br />
         <em>August 2021 – June 2024</em></p>
       </div>
     </section>
 
-    <section id="filters" data-aos="fade-up">
+    <section id="filters">
       <h3>Filter by Category:</h3>
       <button class="filter-btn" data-category="all">All</button>
       <button class="filter-btn" data-category="AI/ML">AI/ML</button>
@@ -47,12 +52,12 @@
       <button class="filter-btn" data-category="Tools">Tools</button>
     </section>
 
-    <section id="projects" data-aos="fade-up">
+    <section id="projects">
       <h2>Projects</h2>
       <div id="repo-list">Loading repositories...</div>
     </section>
 
-    <section id="contact" data-aos="fade-up">
+    <section id="contact">
       <h2>Contact</h2>
       <p><strong>GitHub:</strong> <a href="https://github.com/ABHAYKUMARTRIPATHI">@ABHAYKUMARTRIPATHI</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abhay-kumar-tripathi">linkedin.com/in/abhay-kumar-tripathi</a></p>
@@ -64,8 +69,6 @@
     <p>© 2025 Abhay Kumar Tripathi</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
