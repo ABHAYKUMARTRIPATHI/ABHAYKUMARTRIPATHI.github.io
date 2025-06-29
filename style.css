@@ -250,10 +250,13 @@ footer {
 }
 
 .static-name {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   color: #00ff66;
-  margin-bottom: 0.2rem;
-  text-shadow: 0 0 8px #00ff66;
+  text-shadow:
+    0 0 2px #00ff66,
+    0 0 5px #00ff66,
+    0 0 10px #00ff66;
 }
 
 #typed-roles {
@@ -264,5 +267,10 @@ footer {
 
 /* Glowing Headers */
 h1, h2, h3 {
-  text-shadow: 0 0 6px #00ff66, 0 0 12px #00ff66;
+  color: #00ff66;
+  text-shadow:
+    0 0 2px #00ff66,
+    0 0 4px #00ff66,
+    0 0 8px #00ff66;
 }
+
