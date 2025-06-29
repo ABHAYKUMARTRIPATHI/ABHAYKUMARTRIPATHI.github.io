@@ -15,7 +15,7 @@ body.light {
   color: #0d1117;
 }
 
-/* Background Grid Animation */
+/* Hacker-style Background Grid Animation */
 body::before {
   content: "";
   position: fixed;
@@ -47,39 +47,12 @@ header {
   text-align: center;
 }
 
-header h1,
-.static-name {
-  font-size: 2.5rem;
+header h1 {
+  font-size: 2rem;
+  color: #00ff66;
   margin: 0;
-  font-weight: 800;
-  color: #00ff66;
 }
 
-/* Typed Roles */
-#typed-roles {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #e0e0e0;
-}
-
-#typed-roles::after {
-  content: "_";
-  animation: blink 1s infinite;
-  margin-left: 4px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Headers */
-h1, h2, h3 {
-  color: #00ff66;
-  font-weight: bold;
-}
-
-/* Navigation */
 header nav {
   display: flex;
   gap: 1rem;
@@ -100,8 +73,7 @@ header nav a:hover {
   color: #ff0040;
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
+button#theme-toggle {
   background: none;
   color: #00ff66;
   border: 1px solid #00ff66;
@@ -109,12 +81,11 @@ header nav a:hover {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s;
 }
 
-#theme-toggle:hover {
+button#theme-toggle:hover {
   background-color: rgba(0, 255, 100, 0.1);
-  box-shadow: 0 0 8px #00ff66;
 }
 
 /* Sections */
@@ -122,6 +93,18 @@ section {
   padding: 2rem;
   max-width: 900px;
   margin: auto;
+}
+
+/* Terminal Typing Animation Cursor */
+#typed-roles::after {
+  content: "_";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Repo Cards */
@@ -132,13 +115,12 @@ section {
   margin: 1.5rem 0;
   border-radius: 10px;
   color: #e0e0e0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .repo-card:hover {
   transform: scale(1.02);
   border-color: #ff0040;
-  box-shadow: 0 0 10px #ff0040;
 }
 
 .repo-card h3 {
@@ -157,7 +139,7 @@ section {
 }
 
 /* Filter Buttons */
-.filter-btn {
+button.filter-btn {
   margin: 10px 10px 10px 0;
   background: transparent;
   color: #00ff66;
@@ -165,25 +147,24 @@ section {
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s;
 }
 
-.filter-btn:hover {
+button.filter-btn:hover {
   background: rgba(0, 255, 100, 0.1);
-  box-shadow: 0 0 8px #00ff66;
 }
 
-body.light .filter-btn {
+body.light button.filter-btn {
   background: #eaeaea;
   color: #111;
   border: 1px solid #bbb;
 }
 
-body.light .filter-btn:hover {
+body.light button.filter-btn:hover {
   background: #d0d0d0;
 }
 
-/* Education */
+/* Education Section */
 .edu-entry h3 {
   margin: 0;
   font-size: 1.2rem;
@@ -191,7 +172,7 @@ body.light .filter-btn:hover {
 }
 
 .edu-entry p {
-  margin: 0.3rem 0 0;
+  margin: 0.3rem 0 0 0;
   font-size: 0.95rem;
   line-height: 1.4;
 }
@@ -226,7 +207,9 @@ footer {
 /* AOS Animations */
 [data-aos] {
   opacity: 0;
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  transition-property: transform, opacity;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
 }
 
 [data-aos].aos-animate {
@@ -239,7 +222,7 @@ footer {
     padding: 1rem;
   }
 
-  .static-name {
+  header h1 {
     font-size: 1.5rem;
   }
 
@@ -252,8 +235,27 @@ footer {
   }
 }
 
-/* Name & Title Wrapper */
+/* Typing Role Text */
 .name-and-title {
   text-align: center;
   margin-top: 2rem;
+}
+
+.static-name {
+  font-size: 2rem;
+  color: #00ff66;
+  margin-bottom: 0.2rem;
+}
+
+#typed-roles {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* Header Titles */
+h1, h2, h3 {
+  font-weight: bold;
+  color: #00ff66;
+  text-shadow: none;
 }
