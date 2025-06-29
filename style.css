@@ -48,12 +48,52 @@ header {
 }
 
 header h1 {
-  font-size: 2rem;
-  color: #00ff66;
+  font-size: 2.5rem;
   margin: 0;
-  text-shadow: 0 0 10px #00ff66;
 }
 
+/* Glowing Name */
+.static-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00ff66;
+  margin-bottom: 0.2rem;
+  text-shadow:
+    0 0 2px #00ff66,
+    0 0 6px #00ff66,
+    0 0 10px #00ff66,
+    0 0 18px #00ff66;
+}
+
+/* Terminal Typing Cursor */
+#typed-roles::after {
+  content: "_";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#typed-roles {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* Glowing Headers */
+h1, h2, h3 {
+  color: #00ff66;
+  text-shadow:
+    0 0 1px #00ff66,
+    0 0 3px #00ff66,
+    0 0 6px #00ff66,
+    0 0 10px #00ff66;
+}
+
+/* Navigation */
 header nav {
   display: flex;
   gap: 1rem;
@@ -75,6 +115,7 @@ header nav a:hover {
   text-shadow: 0 0 10px #ff0040;
 }
 
+/* Theme Toggle Button */
 button#theme-toggle {
   background: none;
   color: #00ff66;
@@ -96,18 +137,6 @@ section {
   padding: 2rem;
   max-width: 900px;
   margin: auto;
-}
-
-/* Terminal Typing Animation Cursor */
-#typed-roles::after {
-  content: "_";
-  animation: blink 1s infinite;
-  margin-left: 4px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
 }
 
 /* Repo Cards */
@@ -248,29 +277,3 @@ footer {
   text-align: center;
   margin-top: 2rem;
 }
-
-.static-name {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #00ff66;
-  text-shadow:
-    0 0 2px #00ff66,
-    0 0 5px #00ff66,
-    0 0 10px #00ff66;
-}
-
-#typed-roles {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #e0e0e0;
-}
-
-/* Glowing Headers */
-h1, h2, h3 {
-  color: #00ff66;
-  text-shadow:
-    0 0 2px #00ff66,
-    0 0 4px #00ff66,
-    0 0 8px #00ff66;
-}
-
