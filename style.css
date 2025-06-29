@@ -3,31 +3,31 @@ body {
   font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* white background */
-  color: #111111; /* black text */
+  background-color: #FFFFFF; /* White background */
+  color: #2D3142; /* Main text color */
   scroll-behavior: smooth;
   transition: all 0.3s ease;
 }
 
 body.dark {
-  background-color: #111111;
-  color: #f4f4f4;
+  background-color: #2D3142;
+  color: #FFFFFF;
 }
 
 /* Header */
 header {
-  background: #ffffff;
+  background: #FFFFFF;
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #BFC0C0;
 }
 
 header h1 {
   font-size: 2rem;
-  color: #111;
+  color: #2D3142;
   margin: 0;
 }
 
@@ -40,18 +40,19 @@ header nav {
 }
 
 header nav a {
-  color: #111;
+  color: #4F5D75;
   text-decoration: none;
   font-weight: 500;
   border-bottom: 2px solid transparent;
 }
 
 header nav a:hover {
-  border-color: #111;
+  border-color: #EF8354;
+  color: #EF8354;
 }
 
 button#theme-toggle {
-  background: #111;
+  background: #EF8354;
   color: #fff;
   border: none;
   padding: 6px 12px;
@@ -61,7 +62,7 @@ button#theme-toggle {
 }
 
 button#theme-toggle:hover {
-  background: #333;
+  background: #4F5D75;
 }
 
 /* Section */
@@ -79,14 +80,14 @@ section {
 
 .static-name {
   font-size: 2rem;
-  color: #111;
+  color: #2D3142;
   margin-bottom: 0.2rem;
 }
 
 #typed-roles {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: #4F5D75;
 }
 
 /* Terminal Cursor Blink */
@@ -103,39 +104,39 @@ section {
 
 /* Repo Cards */
 .repo-card {
-  background: #fafafa;
-  border: 1px solid #ccc;
+  background: #F9F9F9;
+  border: 1px solid #BFC0C0;
   padding: 1.2rem;
   margin: 1.5rem 0;
   border-radius: 8px;
-  color: #111;
+  color: #2D3142;
   transition: all 0.2s ease;
 }
 
 .repo-card:hover {
-  background: #f0f0f0;
+  background: #EF8354;
+  color: #FFFFFF;
 }
 
 .repo-card h3 {
   margin-top: 0;
-  color: #111;
 }
 
 .repo-card a {
-  color: #111;
+  color: #4F5D75;
   font-weight: bold;
   text-decoration: underline;
 }
 
 .repo-card a:hover {
-  color: #000;
+  color: #FFFFFF;
 }
 
 /* Filter Buttons */
 button.filter-btn {
   margin: 10px 10px 10px 0;
-  background: #111;
-  color: #fff;
+  background: #4F5D75;
+  color: #FFFFFF;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -143,23 +144,24 @@ button.filter-btn {
 }
 
 button.filter-btn:hover {
-  background: #333;
+  background: #EF8354;
 }
 
 body.dark button.filter-btn {
-  background: #f4f4f4;
-  color: #111;
+  background: #FFFFFF;
+  color: #2D3142;
 }
 
 body.dark button.filter-btn:hover {
-  background: #ddd;
+  background: #EF8354;
+  color: #FFFFFF;
 }
 
 /* Education Section */
 .edu-entry h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #111;
+  color: #2D3142;
 }
 
 .edu-entry p {
@@ -171,9 +173,9 @@ body.dark button.filter-btn:hover {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #ffffff;
-  color: #999;
-  border-top: 1px solid #ddd;
+  background: #FFFFFF;
+  color: #BFC0C0;
+  border-top: 1px solid #BFC0C0;
 }
 
 /* More Projects Note */
@@ -185,13 +187,13 @@ footer {
 }
 
 .more-projects-note a {
-  color: #111;
+  color: #4F5D75;
   font-weight: bold;
   text-decoration: underline;
 }
 
 .more-projects-note a:hover {
-  color: #000;
+  color: #EF8354;
 }
 
 /* AOS Fade In */
