@@ -3,99 +3,93 @@ body {
   font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0b0f0c;
-  color: #e0e0e0;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: #ffffff; /* white background */
+  color: #111111; /* black text */
   scroll-behavior: smooth;
-  position: relative;
+  transition: all 0.3s ease;
 }
 
-body.light {
-  background-color: #f4f4f4;
-  color: #0d1117;
-}
-
-/* Hacker-style Background Grid Animation */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background-image: radial-gradient(rgba(0, 255, 100, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  z-index: -1;
-  animation: gridScroll 60s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes gridScroll {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-50%, -50%); }
+body.dark {
+  background-color: #111111;
+  color: #f4f4f4;
 }
 
 /* Header */
 header {
-  background: #0b0f0c;
+  background: #ffffff;
   padding: 1.5rem 2rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
 header h1 {
   font-size: 2rem;
-  color: #00ff66;
+  color: #111;
   margin: 0;
 }
 
 header nav {
   display: flex;
   gap: 1rem;
-  align-items: center;
   margin-top: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 header nav a {
-  color: #00ff66;
+  color: #111;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  border-bottom: 2px solid transparent;
 }
 
 header nav a:hover {
-  color: #ff0040;
+  border-color: #111;
 }
 
 button#theme-toggle {
-  background: none;
-  color: #00ff66;
-  border: 1px solid #00ff66;
+  background: #111;
+  color: #fff;
+  border: none;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
+  font-weight: bold;
 }
 
 button#theme-toggle:hover {
-  background-color: rgba(0, 255, 100, 0.1);
+  background: #333;
 }
 
-/* Sections */
+/* Section */
 section {
   padding: 2rem;
   max-width: 900px;
   margin: auto;
 }
 
-/* Terminal Typing Animation Cursor */
+/* Typing Role Text */
+.name-and-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.static-name {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 0.2rem;
+}
+
+#typed-roles {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Terminal Cursor Blink */
 #typed-roles::after {
   content: "_";
   animation: blink 1s infinite;
@@ -109,81 +103,77 @@ section {
 
 /* Repo Cards */
 .repo-card {
-  background: #0d0f10;
-  border: 1px solid #00ff66;
+  background: #fafafa;
+  border: 1px solid #ccc;
   padding: 1.2rem;
   margin: 1.5rem 0;
-  border-radius: 10px;
-  color: #e0e0e0;
-  transition: transform 0.2s ease;
+  border-radius: 8px;
+  color: #111;
+  transition: all 0.2s ease;
 }
 
 .repo-card:hover {
-  transform: scale(1.02);
-  border-color: #ff0040;
+  background: #f0f0f0;
 }
 
 .repo-card h3 {
   margin-top: 0;
-  color: #00ff66;
+  color: #111;
 }
 
 .repo-card a {
-  color: #00ff66;
+  color: #111;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .repo-card a:hover {
-  color: #ff0040;
+  color: #000;
 }
 
 /* Filter Buttons */
 button.filter-btn {
   margin: 10px 10px 10px 0;
-  background: transparent;
-  color: #00ff66;
-  border: 1px solid #00ff66;
+  background: #111;
+  color: #fff;
+  border: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 button.filter-btn:hover {
-  background: rgba(0, 255, 100, 0.1);
+  background: #333;
 }
 
-body.light button.filter-btn {
-  background: #eaeaea;
+body.dark button.filter-btn {
+  background: #f4f4f4;
   color: #111;
-  border: 1px solid #bbb;
 }
 
-body.light button.filter-btn:hover {
-  background: #d0d0d0;
+body.dark button.filter-btn:hover {
+  background: #ddd;
 }
 
 /* Education Section */
 .edu-entry h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #00ff66;
+  color: #111;
 }
 
 .edu-entry p {
   margin: 0.3rem 0 0 0;
   font-size: 0.95rem;
-  line-height: 1.4;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #0b0f0c;
-  font-size: 0.9rem;
-  color: #888;
+  background: #ffffff;
+  color: #999;
+  border-top: 1px solid #ddd;
 }
 
 /* More Projects Note */
@@ -195,21 +185,19 @@ footer {
 }
 
 .more-projects-note a {
-  color: #00ff66;
-  text-decoration: none;
+  color: #111;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .more-projects-note a:hover {
-  color: #ff0040;
+  color: #000;
 }
 
-/* AOS Animations */
+/* AOS Fade In */
 [data-aos] {
   opacity: 0;
-  transition-property: transform, opacity;
-  transition-duration: 0.6s;
-  transition-timing-function: ease-in-out;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 [data-aos].aos-animate {
@@ -233,29 +221,4 @@ footer {
   header nav {
     gap: 0.5rem;
   }
-}
-
-/* Typing Role Text */
-.name-and-title {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.static-name {
-  font-size: 2rem;
-  color: #00ff66;
-  margin-bottom: 0.2rem;
-}
-
-#typed-roles {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #e0e0e0;
-}
-
-/* Header Titles */
-h1, h2, h3 {
-  font-weight: bold;
-  color: #00ff66;
-  text-shadow: none;
 }
